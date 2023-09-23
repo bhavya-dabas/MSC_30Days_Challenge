@@ -1,0 +1,15 @@
+class Solution {
+    public int climbStairs(int N) {
+        int[] dp = new int[N + 2];
+		for (int n = 0; n <= N+1; n++) {
+			if (n <= 1) {
+				dp[n] = n;
+				continue;
+			}
+			int sp1 = dp[n - 1];
+			int sp2 = dp[n - 2];
+			dp[n] = sp1 + sp2; //stores values in dp
+		}
+		return dp[N+1];
+    }
+}
